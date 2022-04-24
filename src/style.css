@@ -1,0 +1,116 @@
+button {
+	background: #FF0000;
+}
+
+body {
+	background: #2B2A30;
+	font-family: bungee;
+}
+
+.main {
+  margin: auto;
+  margin-top: 50px;
+  width: 450px;
+}
+
+.playbg {
+	background: white;
+	height: 550px;
+	border-radius: 50px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.playbutton {
+	 background: url(playbutton.svg);
+	 width: 200px;
+	 height: 200px;
+	 border: none;
+}
+
+.inputBox {
+	color: #FFF;
+	text-align: center;
+	background: #141415;
+	width: 400px;
+	border:  none;
+	height: 60px;
+	border-radius: 20px;
+	padding: 0 25px 0 25px;
+	font-family: bungee;
+	font-size: 30px;
+	margin: 0px 0px 30px 0px;
+}
+
+::placeholder {
+	color: white;
+	opacity: 20%;
+	text-align: center;
+}
+
+.lifeBox {
+	margin: auto;
+	padding: 30px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.life {
+	width: 20px;
+	height: 20px;
+	background: #ddd;
+	border-radius: 10px;
+	margin: 0px 5px;
+}
+
+.submitButton {
+	color: #FFF;
+	text-align: center;
+	background: linear-gradient(to right, #FD7D89,#BD38D0);
+	width: 450px;
+	border:  none;
+	height: 60px;
+	border-radius: 20px;
+	font-family: bungee;
+	font-size: 30px;
+	display: flex;
+	align-items: center; 
+	justify-content: center;
+}
+
+.fail {
+	width: 20px;
+	height: 20px;
+	background: #ddd;
+	border-radius: 10px;
+	margin: 0px 5px;
+	background: #111;
+}
+
+.win {
+	width: 20px;
+	height: 20px;
+	background: #ddd;
+	border-radius: 10px;
+	margin: 0px 5px;
+	background: linear-gradient(135deg,#FD7D89,#C945C4);
+}
+
+.dots {
+	font-size: 24px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #FFF;
+}
+
+.idtitle {
+	color: #FFF;
+	display: flex;
+	align-items: center; 
+	justify-content: center;
+}
