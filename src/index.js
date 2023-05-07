@@ -9,25 +9,27 @@ import load from './load.gif';
 
 var diffDate = Math.floor(((new Date().getTime()) - (new Date("04/24/2022").getTime()))/24/3600/1000);
 
-let todayis = diffDate;
-const videoIdA = songData[todayis].vid;
+let todayis = diffDate % songData.length;
+const videoIdA = songData[todayis] ? songData[todayis].vid : "";
 
-const timeSlot = songData[todayis].time;
-const answer = songData[todayis].answer.toUpperCase();
+const timeSlot = songData[todayis] ? songData[todayis].time : 1;
+const answer = songData[todayis] ? songData[todayis].answer.toUpperCase() : "";
 let tries = 3;
 
 
 function Example() {
   
+  const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
+
   let triesSec = 0;
   if (tries == 3){
-    triesSec = 500;
+    triesSec = 1500;
   }
   else if (tries == 2) {
-    triesSec = 1000;
+    triesSec = 2500;
   }
   else if (tries <= 1) {
-    triesSec = 2000;
+    triesSec = 3500;
   }
 
   const initialValues = {guess:""};
@@ -82,6 +84,7 @@ function Example() {
         setGuess2('fail');
       } else if (tries == 0) {
         setGuess3('fail');
+        setShowCorrectAnswer(true);
       }
 
     }
@@ -101,12 +104,11 @@ function Example() {
   const opts = {height: '0', width: '0'}
 
   const onReady = (event) => {
-    // eslint-disable-next-line
+    console.log('YouTube player is ready');
     setPlayer(event.target);
   };
-
   const onPlayVideo = () => {
-    
+    console.log(player);
     player.seekTo(timeSlot);
     player.playVideo();
     setTimeout(onPauseVideo, triesSec);
